@@ -1,0 +1,4 @@
+lightkurve>=2.0.1
+numpy
+scipy
+matplotlib
