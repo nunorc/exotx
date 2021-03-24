@@ -1,3 +1,5 @@
 todo
 build
 __pycache__
+docs/doctrees
+docs/html/.buildinfo

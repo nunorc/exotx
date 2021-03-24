@@ -13,7 +13,7 @@ Install package from the git repository:
 
 .. code-block:: bash
 
-    $ pip install git+https://github.com/nunorc/exotx@0.0.1a1
+    $ pip install git+https://github.com/nunorc/exotx@v0.0.1a1
 
 Retrieve and process some light curves.
 
