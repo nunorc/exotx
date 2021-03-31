@@ -8,7 +8,7 @@ import lightkurve as lk
 import numpy as np
 from scipy import signal
 from astropy.time import Time
-
+import math
 from .classes import Args, LightCurve, Params, Fit, Transit, Periodogram
 
 logger = logging.getLogger(__name__)
@@ -177,13 +177,13 @@ def fold(lc: LightCurve, params: Params,
                     curr.time = curr.time - tmid
                 folds.append(curr)
         except:
-            logger.warning('Missed light curve in fold.')
+            logger.debug('Missed light curve in fold.')
 
         tmid += params.period
 
     return folds
 
-def fit_continuum(lc: LightCurve, phase: float = 0.2) -> Fit:
+def fit_continuum(lc: LightCurve, phase: float = 0.2, degree: int = 1) -> Fit:
     """ Fit the continuum for a light curve.
 
     TODO: more details
@@ -196,20 +196,22 @@ def fit_continuum(lc: LightCurve, phase: float = 0.2) -> Fit:
     Returns:
         lcs: a list LightCurve objects (the folds)
     """
-    tstart = -phase
-    tend = phase
+    tmid = lc.time.value[math.floor(len(lc.time.value) / 2)]
+    tstart = tmid-phase
+    tend = tmid+phase
 
     if not isinstance(lc, LightCurve):
         return None
 
     mask = np.logical_or(lc.time.value < tstart, lc.time.value > tend)
-    if np.any(mask) > 0:
+    if np.any(mask) == True:
         ts = lc.time.value[mask]
         ys = lc.flux.value[mask]
+        coefs = np.polyfit(ts, ys, degree)
 
-    coefs = np.polyfit(ts, ys, 1)
-
-    return Fit({ 'method': 'polynomial', 'degree': 1, 'coefs': coefs })
+        return Fit({ 'method': 'polynomial', 'degree': degree, 'coefs': coefs })
+    else:
+        return None
 
 def normalize_t(lc: LightCurve, fit: Fit) -> Transit:
     """ Normalizer a light curve given a continuum fit.
