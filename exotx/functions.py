@@ -194,14 +194,14 @@ def fit_continuum(lc: LightCurve, phase: float = 0.2, degree: int = 1) -> Fit:
         keep_time: keep original time or set to phase
 
     Returns:
-        lcs: a list LightCurve objects (the folds)
+        fit: a Fir fot the continuum
     """
+    if not isinstance(lc, LightCurve):
+        return None
+
     tmid = lc.time.value[math.floor(len(lc.time.value) / 2)]
     tstart = tmid-phase
     tend = tmid+phase
-
-    if not isinstance(lc, LightCurve):
-        return None
 
     mask = np.logical_or(lc.time.value < tstart, lc.time.value > tend)
     if np.any(mask) == True:
