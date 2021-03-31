@@ -4,11 +4,14 @@
 import logging
 
 import matplotlib.pyplot as plt
+from matplotlib import ticker
 import numpy as np
 
 logger = logging.getLogger(__name__)
 
-def plot_lc(lc, err=True, fit=None, figsize=(12,6), xlabel='Time', ylabel='Flux'):
+COLORS = ['#212121', '#bdbdbd']
+
+def plot_lc(lc, err=True, fit=None, figsize=(12,4), xlabel='Time - 2454833 (BKJD days)', ylabel='Flux ($e^- s^{-1}$)'):
     """ Plot a lightcurve.
 
     Args:
@@ -18,14 +21,19 @@ def plot_lc(lc, err=True, fit=None, figsize=(12,6), xlabel='Time', ylabel='Flux'
 
     if err:
         ax.errorbar(lc.time.value, lc.flux.value, yerr=lc.flux_err.value,
-                    fmt='.', color='darkgray', ecolor='lightgrey', markersize=2)
+                    fmt='.', color=COLORS[0], ecolor=COLORS[1], markersize=2)
     else:
-        ax.plot(lc.time.value, lc.flux.value, '.', color='darkgray', markersize=2)
+        ax.plot(lc.time.value, lc.flux.value, '.', color=COLORS[0], markersize=2)
+
+    formatter = ticker.ScalarFormatter(useMathText=True)
+    formatter.set_scientific(True)
+    formatter.set_powerlimits((-1,1))
 
     ax.set_xlabel(xlabel, fontsize=16)
     ax.set_ylabel(ylabel, fontsize=16)
     ax.margins(x=0.0, y=0.1)
     ax.minorticks_on()
+    ax.yaxis.set_major_formatter(formatter)
 
     if fit:
         xmin, xmax = ax.get_xlim()
@@ -34,8 +42,8 @@ def plot_lc(lc, err=True, fit=None, figsize=(12,6), xlabel='Time', ylabel='Flux'
 
     return ax
 
-def plot_folds(folds, err=True, fit=None, shift_t0=None, figsize=(12,6),
-               xlabel='Phase', ylabel='Flux'):
+def plot_folds(folds, err=True, fit=None, shift_t0=None, figsize=(12,4),
+               xlabel='Phase', ylabel='Flux ($e^- s^{-1}$)'):
     """ Plot a list of folds.
 
     Args:
@@ -52,15 +60,20 @@ def plot_folds(folds, err=True, fit=None, shift_t0=None, figsize=(12,6),
             ts = ts + shift_t0
 
         if err:
-            ax.errorbar(ts, ys, yerr=ys_err, fmt='.', color='darkgray',
-                        ecolor='lightgrey', markersize=2)
+            ax.errorbar(ts, ys, yerr=ys_err, fmt='.', color=COLORS[0],
+                        ecolor=COLORS[1], markersize=2)
         else:
-            ax.plot(ts, ys, '.', color='darkgray', markersize=2)
+            ax.plot(ts, ys, '.', color=COLORS[0], markersize=2)
+
+    formatter = ticker.ScalarFormatter(useMathText=True)
+    formatter.set_scientific(True)
+    formatter.set_powerlimits((-1,1))
 
     ax.set_xlabel(xlabel, fontsize=16)
     ax.set_ylabel(ylabel, fontsize=16)
     ax.margins(x=0.0, y=0.1)
     ax.minorticks_on()
+    ax.yaxis.set_major_formatter(formatter)
 
     if fit:
         x = np.linspace(min(ts), max(ts), 1000)

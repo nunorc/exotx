@@ -16,6 +16,9 @@ logger = logging.getLogger(__name__)
 def retrieve(args: Args) -> List[LightCurve]:
     """ Retrieve a collection of lightcurves.
 
+    Retrieve a collection of light curves.
+    This is a wrapper for [lightkurve.search_lightcurve](https://docs.lightkurve.org/reference/api/lightkurve.search_lightcurve.html?highlight=search_lightcurve).
+
     Args:
         args (Args): a instance of the Args class
 
@@ -34,7 +37,8 @@ def retrieve(args: Args) -> List[LightCurve]:
 def detrend(lc: LightCurve) -> LightCurve:
     """ Detrend a lightcurve.
 
-    TODO: details on detrend operation from the lightkurve package
+    Removes the low frequency trend using scipy’s Savitzky-Golay filter.
+    This is a wrapper for [lightkurve.LightCurve.flatten](https://docs.lightkurve.org/reference/api/lightkurve.LightCurve.flatten.html#lightkurve.LightCurve.flatten).
 
     Args:
         lc (LightCurve): a lightcurve
@@ -52,13 +56,14 @@ def detrend(lc: LightCurve) -> LightCurve:
 def normalize(lc: LightCurve) -> LightCurve:
     """ Normalize a lightcurve.
 
-    TODO: details on normalize operation from the lightkurve package
+    Divides the flux and the flux error by the mean value.
+    This is a wrapper for [lightkurve.LightCurve.normalize](https://docs.lightkurve.org/reference/api/lightkurve.LightCurve.normalize.html#lightkurve.LightCurve.normalize).
 
     Args:
         lc (LightCurve): a lightcurve
 
     Returns:
-        lc: a normalize lightcurve
+        lc: a normalized lightcurve
     """
     result = None
 
@@ -69,6 +74,8 @@ def normalize(lc: LightCurve) -> LightCurve:
 
 def combine(lcs: List[LightCurve]) -> LightCurve:
     """ Combine a list of lightcurves.
+
+    Append together a list of light curves.
 
     Args:
         lcs: a list of LightCurve objects
@@ -182,8 +189,8 @@ def fit_continuum(lc: LightCurve, phase: float = 0.2) -> Fit:
     TODO: more details
 
     Args:
-        lc: a Periodogram object
-        phase: the phase
+        lc: a LightCurve object
+        phase: the phase of the transit datapoints
         keep_time: keep original time or set to phase
 
     Returns:
@@ -195,7 +202,7 @@ def fit_continuum(lc: LightCurve, phase: float = 0.2) -> Fit:
     if not isinstance(lc, LightCurve):
         return None
 
-    mask = np.logical_or(lc.time.value > tstart, lc.time.value < tend)
+    mask = np.logical_or(lc.time.value < tstart, lc.time.value > tend)
     if np.any(mask) > 0:
         ts = lc.time.value[mask]
         ys = lc.flux.value[mask]
