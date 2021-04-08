@@ -15,6 +15,7 @@ class Args:
 
     Attributes:
       target (str): target name (e.g. 'Kepler 210')
+      mission (str): mission, defaults to 'Kepler'
       quarters ([int]): list of quarters
       cadence (str): 'short' or 'long' cadence
       pdc (bool): use PDF data
@@ -22,11 +23,13 @@ class Args:
     """
     def __init__(self,
                  target: str = '',
+                 mission: str = 'Kepler',
                  quarters: List[int] = [1],
                  cadence: str = 'long',
                  pdc: bool = True):
         """ Init class instance. """
         self.target = target
+        self.mission = mission
         self.quarters = quarters
         self.cadence = cadence
         self.pdc = pdc
@@ -39,19 +42,20 @@ class Args:
 
     def _to_string(self):
         return f"target='{ self.target }', \
+                 mission='{ self.mission }', \
                  quarters={ self.quarters }, \
                  cadence='{ self.cadence }', \
-                 pdf={ self.pdc}"
+                 pdc={ self.pdc}"
 
 class Params:
-    """ A class for storing parameters related with some operations.
+    """ A wrapper class for storing parameters related with some operations.
 
     Attributes:
       dict: list of pairs key, value
 
     """
-    def __init__(self, attrs):
-        for key, value in attrs.items():
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
             setattr(self, key, value)
 
     def __str__(self):
@@ -71,14 +75,14 @@ class Params:
         setattr(self, name, value)
 
 class Fit:
-    """ A class for storing a fit related with some operations.
+    """ A wrapper class for storing a fit related with some operations.
 
     Attributes:
       dict: list of pairs key, value
 
     """
-    def __init__(self, attrs):
-        for key, value in attrs.items():
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
             setattr(self, key, value)
 
     def __str__(self):

@@ -20,7 +20,7 @@ def retrieve(args: Args) -> List[LightCurve]:
     This is a wrapper for [lightkurve.search_lightcurve](https://docs.lightkurve.org/reference/api/lightkurve.search_lightcurve.html?highlight=search_lightcurve).
 
     Args:
-        args (Args): a instance of the Args class
+        args (Args): an instance of the Args class
 
     Returns:
         lcc: a list of light curves
@@ -28,9 +28,9 @@ def retrieve(args: Args) -> List[LightCurve]:
     quarters = list(args.quarters)
 
     lcc = lk.search_lightcurve(args.target,
-                               author='Kepler',  # TODO: get from Args
-                               quarter=quarters,
-                               cadence=args.cadence).download_all()
+                               mission = args.mission,
+                               quarter = quarters,
+                               cadence = args.cadence).download_all()
 
     return list(lcc)
 
@@ -130,9 +130,9 @@ def find_pg_params(pg: Periodogram, n: int = 10) -> List[Params]:
 
     params = []
     for idx in peaks:
-        params.append(Params({ 'power': pg.power[idx].value,
-                               'period': pg.period[idx].value,
-                               't0': pg.transit_time[idx].value }))
+        params.append(Params(power = pg.power[idx].value,
+                             period = pg.period[idx].value,
+                             t0 = pg.transit_time[idx].value))
     params = sorted(params, key=lambda i: i.power, reverse=True)
 
     if len(params) > 0:
@@ -209,7 +209,7 @@ def fit_continuum(lc: LightCurve, phase: float = 0.2, degree: int = 1) -> Fit:
         ys = lc.flux.value[mask]
         coefs = np.polyfit(ts, ys, degree)
 
-        return Fit({ 'method': 'polynomial', 'degree': degree, 'coefs': coefs })
+        return Fit(method = 'polynomial', degree = degree, coefs = coefs)
     else:
         return None
 
