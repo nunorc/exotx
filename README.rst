@@ -2,7 +2,7 @@
 Exoplanets Transit Explorer
 ===========================
 
-.. warning:: This package is experimental, and under heavy development.
+.. warning:: This package is experimental, and under development.
 
 An experimental package for quickly exploring exoplanets transits and associated resources.
 
@@ -41,7 +41,10 @@ Acknowledgments
 ===============
 
 Thank you to the authors of the
-`lightkurve <https://docs.lightkurve.org>`_ and related packages.
+`lightkurve <https://docs.lightkurve.org>`_,
+`batman-package <https://lweb.cfa.harvard.edu/~lkreidberg/batman/>`_ ,
+`emcee <https://emcee.readthedocs.io/>`_ ,
+and upstream packages.
 
-Thank you to Susana Barros and Olivier Demangeon for the comments
-and discussions that helped improve this package.
+Thank you to Susana Barros and Olivier Demangeon for the discussions that
+helped improve this package.

@@ -14,4 +14,4 @@ setup(name='exotx',
       long_description_content_type='text/x-rst',
       license='MIT',
       packages=find_packages(),
-      install_requires=['lightkurve>=2.0.1','numpy','scipy','matplotlib'])
+      install_requires=['lightkurve>=2.0.1','numpy','scipy','matplotlib','batman-package','emcee','astroquery','tqdm'])

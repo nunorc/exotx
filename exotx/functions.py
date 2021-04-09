@@ -131,7 +131,7 @@ def find_pg_params(pg: Periodogram, n: int = 10) -> List[Params]:
     params = []
     for idx in peaks:
         params.append(Params(power = pg.power[idx].value,
-                             period = pg.period[idx].value,
+                             period = pg.p[idx].value,
                              t0 = pg.transit_time[idx].value))
     params = sorted(params, key=lambda i: i.power, reverse=True)
 
@@ -139,7 +139,7 @@ def find_pg_params(pg: Periodogram, n: int = 10) -> List[Params]:
         result.append(params[0])
         i = 1
         while (i < len(params)) and (len(result) < n):
-            p1, p2 = int(result[-1].period), int(params[i].period)
+            p1, p2 = int(result[-1].p), int(params[i].p)
             i += 1
             if (p1 < 1.0) or (p2 < 1.0) or (p2 % p1 == 0) or (p1 % p2 == 0):
                 continue
@@ -179,7 +179,7 @@ def fold(lc: LightCurve, params: Params,
         except:
             logger.debug('Missed light curve in fold.')
 
-        tmid += params.period
+        tmid += params.p
 
     return folds
 

@@ -67,12 +67,35 @@ class Params:
     def _to_string(self):
         pairs = []
         for key in dir(self):
+            if key in ['get', 'set', 'names']:
+                continue
             if not key.startswith('_'):
                 pairs.append(key + '=' + str(getattr(self, key)))
         return ", ".join(pairs)
 
-    def _set(self, name, value):
-        setattr(self, name, value)
+    def get(self, name):
+        value = None
+
+        if name in dir(self):
+            value = getattr(self, name)
+
+        return value
+
+    def set(self, name, value):
+        if value is not None:
+            setattr(self, name, value)
+
+        return value
+
+    def names(self):
+        names = []
+
+        for key in dir(self):
+            if not key.startswith('_'):
+                names.append(key)
+
+        return names
+
 
 class Fit:
     """ A wrapper class for storing a fit related with some operations.
