@@ -41,7 +41,7 @@ class LightCurveModel():
         self.priors = {}
         self._initial_params = []
 
-    def fit(self, lc: LightCurve):
+    def fit(self, lc: LightCurve, steps=2000):
         if isinstance(lc, LightCurve):
             self.time = lc.time.value
             self.flux = lc.flux.value
@@ -49,7 +49,7 @@ class LightCurveModel():
 
         # setup
         data = (self.time, self.flux, self.flux_err)
-        self._init_mcmc()
+        self._init_mcmc(steps=steps)
 
         # mcmc burnin
         sampler = emcee.EnsembleSampler(self.nwalkers, self.ndim, self._log_probability, args=data)
@@ -71,16 +71,16 @@ class LightCurveModel():
 
         logging.info(f"MCMC done")
 
-    def _init_mcmc(self):
+    def _init_mcmc(self, steps=2000):
         logging.info('Init MCMC')
 
         self._initial_params = []
         self._init_priors_initial_params()
 
-        self.jitter = 0
+        self.jitter = -8
         self.ndim = len(self.free_params)
         self.nwalkers = 32
-        self.steps = 2000
+        self.steps = steps
         self.p0 = [np.array(self._initial_params) + 1e-8 * np.random.randn(self.ndim) for i in range(self.nwalkers)]
 
     def _init_priors_initial_params(self):
