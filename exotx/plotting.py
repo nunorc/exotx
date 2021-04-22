@@ -29,6 +29,7 @@ def plot_lc(lc, err=True, fit=None, figsize=(12,4), xlabel='Time - 2454833 (BKJD
     formatter.set_scientific(True)
     formatter.set_powerlimits((-1,1))
 
+    ax.set_title(lc.meta['OBJECT'])
     ax.set_xlabel(xlabel, fontsize=16)
     ax.set_ylabel(ylabel, fontsize=16)
     ax.margins(x=0.0, y=0.1)
