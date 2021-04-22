@@ -164,10 +164,15 @@
 </section>
 <section id="quick-start">
 <h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Install package from the git repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install git+https://github.com/nunorc/exotx@master
 </pre></div>
 </div>
+</section>
+<section id="using-light-curves">
+<h2>Using light curves<a class="headerlink" href="#using-light-curves" title="Permalink to this headline">¶</a></h2>
 <p>Retrieve and process some light curves.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">exotx</span>
 
@@ -182,7 +187,7 @@
 <span class="n">lcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">exotx</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lcs</span><span class="p">]</span>
 
 <span class="c1"># combine into a single light curve</span>
-<span class="n">lc</span> <span class="o">=</span>  <span class="n">exotx</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">lcs</span><span class="p">)</span>
+<span class="n">lc</span> <span class="o">=</span> <span class="n">exotx</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">lcs</span><span class="p">)</span>
 
 <span class="c1"># plot the final result</span>
 <span class="n">exotx</span><span class="o">.</span><span class="n">plot_lc</span><span class="p">(</span><span class="n">lc</span><span class="p">)</span>
@@ -190,6 +195,23 @@
 </div>
 <p>Yielding the following plot.</p>
 <img alt="https://nunorc.github.io/exotx/html/_static/lc_plot_1.png" src="https://nunorc.github.io/exotx/html/_static/lc_plot_1.png" />
+</section>
+<section id="folding-light-curves">
+<h2>Folding Light Curves<a class="headerlink" href="#folding-light-curves" title="Permalink to this headline">¶</a></h2>
+<p>Folding a light curve:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># define parameteres for a known planet</span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">exotx</span><span class="o">.</span><span class="n">Params</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">2.4532</span><span class="p">,</span> <span class="n">t0</span><span class="o">=</span><span class="mf">134.092</span><span class="p">)</span>
+
+<span class="c1"># create a list of folds</span>
+<span class="n">folds</span> <span class="o">=</span> <span class="n">exotx</span><span class="o">.</span><span class="n">fold</span><span class="p">(</span><span class="n">lc</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+<span class="c1"># plot the folded light curve</span>
+<span class="n">exotx</span><span class="o">.</span><span class="n">plot_folds</span><span class="p">(</span><span class="n">folds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Yielding the following plot.</p>
+<img alt="https://nunorc.github.io/exotx/html/_static/lc_plot_2.png" src="https://nunorc.github.io/exotx/html/_static/lc_plot_2.png" />
+</section>
 </section>
 <section id="acknowledgments">
 <h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h1>

@@ -9,11 +9,18 @@ An experimental package for quickly exploring exoplanets transits and associated
 Quick Start
 ===========
 
+Installation
+------------
+
 Install package from the git repository:
 
 .. code-block:: bash
 
     $ pip install git+https://github.com/nunorc/exotx@master
+
+
+Using light curves
+------------------
 
 Retrieve and process some light curves.
 
@@ -32,7 +39,7 @@ Retrieve and process some light curves.
     lcs = [exotx.normalize(i) for i in lcs]
 
     # combine into a single light curve
-    lc =  exotx.combine(lcs)
+    lc = exotx.combine(lcs)
 
     # plot the final result
     exotx.plot_lc(lc)
@@ -40,6 +47,27 @@ Retrieve and process some light curves.
 Yielding the following plot.
 
 .. image:: https://nunorc.github.io/exotx/html/_static/lc_plot_1.png
+
+Folding Light Curves
+--------------------
+
+Folding a light curve:
+
+.. code-block:: python
+
+    # define parameteres for a known planet
+    params = exotx.Params(p=2.4532, t0=134.092)
+
+    # create a list of folds
+    folds = exotx.fold(lc, params)
+
+    # plot the folded light curve
+    exotx.plot_folds(folds)
+
+Yielding the following plot.
+
+.. image:: https://nunorc.github.io/exotx/html/_static/lc_plot_2.png
+
 
 Acknowledgments
 ===============
