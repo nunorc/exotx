@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>exotx package &mdash; exotx 0.0.1a1 documentation</title>
@@ -38,7 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="exotx" href="modules.html" /> 
+    <link rel="next" title="setup module" href="setup.html" />
+    <link rel="prev" title="exotx.git" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,17 +85,19 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">exotx</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">exotx.git</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">exotx package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-exotx.classes">exotx.classes module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-exotx.functions">exotx.functions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-exotx.models">exotx.models module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-exotx.plotting">exotx.plotting module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-exotx">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">setup module</a></li>
 </ul>
 </li>
 </ul>
@@ -144,7 +148,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">exotx</a> &raquo;</li>
+          <li><a href="modules.html">exotx.git</a> &raquo;</li>
         
       <li>exotx package</li>
     
@@ -165,17 +169,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="exotx-package">
+  <section id="exotx-package">
 <h1>exotx package<a class="headerlink" href="#exotx-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
+<section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-exotx.classes">
+</section>
+<section id="module-exotx.classes">
 <span id="exotx-classes-module"></span><h2>exotx.classes module<a class="headerlink" href="#module-exotx.classes" title="Permalink to this headline">¶</a></h2>
 <p>Classes and aliases definitions.</p>
 <dl class="py class">
 <dt id="exotx.classes.Args">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">exotx.classes.</span></code><code class="sig-name descname"><span class="pre">Args</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quarters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">[1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cadence</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'long'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Args" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">exotx.classes.</span></code><code class="sig-name descname"><span class="pre">Args</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mission</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'Kepler'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quarters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">[1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cadence</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'long'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pdc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class for storing arguments related with an object.
 This is mainly used for declaring information for the retrieve function.</p>
@@ -183,6 +187,17 @@ This is mainly used for declaring information for the retrieve function.</p>
 <dt id="exotx.classes.Args.target">
 <code class="sig-name descname"><span class="pre">target</span></code><a class="headerlink" href="#exotx.classes.Args.target" title="Permalink to this definition">¶</a></dt>
 <dd><p>target name (e.g. ‘Kepler 210’)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="exotx.classes.Args.mission">
+<code class="sig-name descname"><span class="pre">mission</span></code><a class="headerlink" href="#exotx.classes.Args.mission" title="Permalink to this definition">¶</a></dt>
+<dd><p>mission, defaults to ‘Kepler’</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
 <dd class="field-odd"><p>str</p>
@@ -227,9 +242,9 @@ This is mainly used for declaring information for the retrieve function.</p>
 
 <dl class="py class">
 <dt id="exotx.classes.Fit">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">exotx.classes.</span></code><code class="sig-name descname"><span class="pre">Fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attrs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Fit" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">exotx.classes.</span></code><code class="sig-name descname"><span class="pre">Fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A class for storing a fit related with some operations.</p>
+<p>A wrapper class for storing a fit related with some operations.</p>
 <dl class="py attribute">
 <dt id="exotx.classes.Fit.dict">
 <code class="sig-name descname"><span class="pre">dict</span></code><a class="headerlink" href="#exotx.classes.Fit.dict" title="Permalink to this definition">¶</a></dt>
@@ -240,19 +255,34 @@ This is mainly used for declaring information for the retrieve function.</p>
 
 <dl class="py class">
 <dt id="exotx.classes.Params">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">exotx.classes.</span></code><code class="sig-name descname"><span class="pre">Params</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attrs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Params" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">exotx.classes.</span></code><code class="sig-name descname"><span class="pre">Params</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A class for storing parameters related with some operations.</p>
+<p>A wrapper class for storing parameters related with some operations.</p>
 <dl class="py attribute">
 <dt id="exotx.classes.Params.dict">
 <code class="sig-name descname"><span class="pre">dict</span></code><a class="headerlink" href="#exotx.classes.Params.dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of pairs key, value</p>
 </dd></dl>
 
+<dl class="py method">
+<dt id="exotx.classes.Params.get">
+<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Params.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="exotx.classes.Params.names">
+<code class="sig-name descname"><span class="pre">names</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Params.names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="exotx.classes.Params.set">
+<code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.classes.Params.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
-</div>
-<div class="section" id="module-exotx.functions">
+</section>
+<section id="module-exotx.functions">
 <span id="exotx-functions-module"></span><h2>exotx.functions module<a class="headerlink" href="#module-exotx.functions" title="Permalink to this headline">¶</a></h2>
 <p>Functions for performing several tasks.</p>
 <dl class="py function">
@@ -324,10 +354,10 @@ This is a wrapper for [lightkurve.LightCurve.flatten](<a class="reference extern
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>a list LightCurve objects (the folds)</p>
+<dd class="field-even"><p>a Fir fot the continuum</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>lcs</p>
+<dd class="field-odd"><p>fit</p>
 </dd>
 </dl>
 </dd></dl>
@@ -421,7 +451,7 @@ This is a wrapper for [lightkurve.LightCurve.normalize](<a class="reference exte
 This is a wrapper for [lightkurve.search_lightcurve](<a class="reference external" href="https://docs.lightkurve.org/reference/api/lightkurve.search_lightcurve.html?highlight=search_lightcurve">https://docs.lightkurve.org/reference/api/lightkurve.search_lightcurve.html?highlight=search_lightcurve</a>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>args</strong> (<a class="reference internal" href="#exotx.classes.Args" title="exotx.classes.Args"><em>Args</em></a>) – a instance of the Args class</p>
+<dd class="field-odd"><p><strong>args</strong> (<a class="reference internal" href="#exotx.classes.Args" title="exotx.classes.Args"><em>Args</em></a>) – an instance of the Args class</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>a list of light curves</p>
@@ -432,8 +462,52 @@ This is a wrapper for [lightkurve.search_lightcurve](<a class="reference externa
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-exotx.plotting">
+</section>
+<section id="module-exotx.models">
+<span id="exotx-models-module"></span><h2>exotx.models module<a class="headerlink" href="#module-exotx.models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="exotx.models.LightCurveModel">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">exotx.models.</span></code><code class="sig-name descname"><span class="pre">LightCurveModel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.models.LightCurveModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="exotx.models.LightCurveModel.fit">
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lc</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">lightkurve.lightcurve.LightCurve</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.models.LightCurveModel.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="exotx.models.LightCurveModel.model">
+<code class="sig-name descname"><span class="pre">model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.models.LightCurveModel.model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="exotx.models.LightCurveModel.params_defaults">
+<code class="sig-name descname"><span class="pre">params_defaults</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'a':</span> <span class="pre">1,</span> <span class="pre">'e':</span> <span class="pre">0.0,</span> <span class="pre">'i':</span> <span class="pre">90,</span> <span class="pre">'ld':</span> <span class="pre">'quadratic',</span> <span class="pre">'p':</span> <span class="pre">1,</span> <span class="pre">'rp':</span> <span class="pre">0.1,</span> <span class="pre">'t0':</span> <span class="pre">0.0,</span> <span class="pre">'u':</span> <span class="pre">[0.3,</span> <span class="pre">0.3],</span> <span class="pre">'w':</span> <span class="pre">90}</span></em><a class="headerlink" href="#exotx.models.LightCurveModel.params_defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="exotx.models.LightCurveModel.params_names">
+<code class="sig-name descname"><span class="pre">params_names</span></code><em class="property"> <span class="pre">=</span> <span class="pre">['t0',</span> <span class="pre">'p',</span> <span class="pre">'rp',</span> <span class="pre">'a',</span> <span class="pre">'i',</span> <span class="pre">'e',</span> <span class="pre">'w',</span> <span class="pre">'ld',</span> <span class="pre">'u']</span></em><a class="headerlink" href="#exotx.models.LightCurveModel.params_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="exotx.models.LightCurveModel.plot">
+<code class="sig-name descname"><span class="pre">plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">err</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Flux</span> <span class="pre">($e^-</span> <span class="pre">s^{-1}$)'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.models.LightCurveModel.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="exotx.models.LightCurveModel.plot_residuals">
+<code class="sig-name descname"><span class="pre">plot_residuals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">4)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#exotx.models.LightCurveModel.plot_residuals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="exotx.models.LightCurveModel.summary">
+<code class="sig-name descname"><span class="pre">summary</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#exotx.models.LightCurveModel.summary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-exotx.plotting">
 <span id="exotx-plotting-module"></span><h2>exotx.plotting module<a class="headerlink" href="#module-exotx.plotting" title="Permalink to this headline">¶</a></h2>
 <p>Auxiliary functions for quickly plotting.</p>
 <dl class="py function">
@@ -458,12 +532,12 @@ This is a wrapper for [lightkurve.search_lightcurve](<a class="reference externa
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-exotx">
+</section>
+<section id="module-exotx">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-exotx" title="Permalink to this headline">¶</a></h2>
 <p>exotx init</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -471,7 +545,8 @@ This is a wrapper for [lightkurve.search_lightcurve](<a class="reference externa
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="modules.html" class="btn btn-neutral float-left" title="exotx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="setup.html" class="btn btn-neutral float-right" title="setup module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-left" title="exotx.git" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

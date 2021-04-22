@@ -20,6 +20,14 @@ exotx.functions module
    :undoc-members:
    :show-inheritance:
 
+exotx.models module
+-------------------
+
+.. automodule:: exotx.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 exotx.plotting module
 ---------------------
 

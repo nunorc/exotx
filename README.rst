@@ -37,6 +37,10 @@ Retrieve and process some light curves.
     # plot the final result
     exotx.plot_lc(lc)
 
+Yielding the following plot.
+
+.. image:: https://nunorc.github.io/exotx/html/_static/lc_plot_1.png
+
 Acknowledgments
 ===============
 
